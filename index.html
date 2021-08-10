@@ -17,21 +17,31 @@
                 <a href="index.html">Warung 76</a>
             </div>
             <div class="sidebar-toggle">
-                <input type="checkbox">
+                <input type="checkbox" id="checkbox" onclick="sidebar()">
                 <span></span>
                 <span></span>
                 <span></span>
+                <ul id="side_box">
+                    <li><a href="index.html" class="active-link">Beranda</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
             </div>
-            <ul>
-                <li><a href="index.html" class="active-link">Beranda</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Kontak</a></li>
-            </ul>
         </nav>
     </header>
 
     <script>
-
+        // function sidebar(){
+        //     var side_box = document.getElementById("side_box");
+        //     var x = document.getElementById("checkbox").checked;
+        //     // console.log(x)
+        //     if (x == true) {
+        //         side_box.style.display='flex';
+        //     }
+        //     else{
+        //         side_box.style.display='none';
+        //     }
+        // }
     </script>
 </body>
 </html>
