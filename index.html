@@ -17,21 +17,30 @@
                 <a href="index.html">Warung 76</a>
             </div>
             <div class="sidebar-toggle">
-                <input type="checkbox">
+                <input type="checkbox" id="checkbox" onclick="sidebar()">
                 <span></span>
                 <span></span>
                 <span></span>
+                <ul id="side_box">
+                    <li><a href="index.html" class="active-link">Beranda</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">Kontak</a></li>
+                </ul>
             </div>
-            <ul>
-                <li><a href="index.html" class="active-link">Beranda</a></li>
-                <li><a href="#">Menu</a></li>
-                <li><a href="#">Kontak</a></li>
-            </ul>
         </nav>
     </header>
 
-    <script>
+    <section style="padding: 1000px 0;">
 
+    </section>
+
+    <script>
+        window.addEventListener('scroll', function(){
+            let header = document.querySelector('nav');
+            let windowPosition = window.scrollY > 0;
+
+            header.classList.toggle('nav-scrolled', windowPosition);
+        });
     </script>
 </body>
 </html>
