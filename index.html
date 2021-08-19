@@ -30,18 +30,17 @@
         </nav>
     </header>
 
+    <section style="padding: 1000px 0;">
+
+    </section>
+
     <script>
-        // function sidebar(){
-        //     var side_box = document.getElementById("side_box");
-        //     var x = document.getElementById("checkbox").checked;
-        //     // console.log(x)
-        //     if (x == true) {
-        //         side_box.style.display='flex';
-        //     }
-        //     else{
-        //         side_box.style.display='none';
-        //     }
-        // }
+        window.addEventListener('scroll', function(){
+            let header = document.querySelector('nav');
+            let windowPosition = window.scrollY > 0;
+
+            header.classList.toggle('nav-scrolled', windowPosition);
+        });
     </script>
 </body>
 </html>
