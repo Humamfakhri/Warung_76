@@ -4,18 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-/* UTILITY */
-nav .sidebar-toggle .active-link {
-    color: #000;
-}
-.active-link::after {
-    content: '';
-    display: block;
-    border-bottom: 3px solid #000;
-    width: 50%;
-    margin: 3px auto 0;
-}
-/* ~ UTILITY ~ */
+
 header {
     position:fixed;
     top:0;
@@ -47,6 +36,15 @@ nav .sidebar-toggle ul {
 nav .sidebar-toggle ul li {
     margin: 0 25px;
 }
+nav .sidebar-toggle ul li a::after {
+    content: '';
+    display: block;
+    border-bottom: 3px solid #000;
+    width: 50%;
+    margin: 3px auto 0;
+    transform: scale(0);
+    transition: .2s;
+}
 nav .sidebar-toggle ul li a {
     color: rgba(0, 0, 0, 0.7);
 }
@@ -59,9 +57,16 @@ nav .sidebar-toggle ul li a:hover::after {
     border-bottom: 3px solid #000;
     width: 50%;
     margin: 3px auto 0;
+    transform: scale(1);
 }
 nav .sidebar-toggle ul li:last-child{
     margin-right: 0;
+}
+nav .sidebar-toggle ul li .active-link {
+    color: #000;
+}
+nav .sidebar-toggle ul li .active-link::after {
+    transform: scale(1);
 }
 
 /* RESPONSIVE BREAKPOINTS */
@@ -119,6 +124,9 @@ nav .sidebar-toggle ul li:last-child{
     }
     nav .sidebar-toggle ul li a:hover {
         color: rgb(255, 255, 255);
+    }
+    nav .sidebar-toggle ul li a::after {
+        display: none;
     }
     nav .sidebar-toggle ul li a:hover::after {
         content: '';
