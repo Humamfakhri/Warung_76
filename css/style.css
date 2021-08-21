@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    --primary: #FF7A00;
+    --text: #333;
 }
 
 header {
@@ -41,7 +43,7 @@ nav .nav-brand a, nav .sidebar-toggle ul li a {
 }
 nav .nav-brand a {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 22px;
     color: #FF7A00;
 }
 nav .sidebar-toggle input {
@@ -99,7 +101,101 @@ nav .sidebar-toggle ul li .active-link::after {
     transform: scale(1);
 }
 
+/* Hero */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 0 100px;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -200px;
+    right: 0;
+    background-image: url(../img/ellipse.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 70%;
+    height: 100%;
+    z-index: -1;
+}
+.hero-text {
+    width: 50%;
+    color: var(--text);
+}
+.hero-text h1 {
+    font-size: 44px;
+    margin-bottom: 15px;
+}
+.hero-text p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+.hero-btn {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    height: 45px;
+    width: 140px;
+    border-radius: 30px;
+    color: #000;
+    background-image: linear-gradient(to right, #FF7A00, yellow);
+    box-shadow: inset 0 0 0 0 #FF7A00;
+    transition: all .3s;
+}
+.hero-btn:hover {
+    box-shadow: inset 140px 0 0 #FF7A00;
+    cursor: pointer;
+    color: #fff;
+}
+.hero-img {
+    width: 50%;
+    text-align: center;
+}
+.hero-img img {
+    height: auto;
+    max-width: 90%;
+}
+.hero-img .hero-btn {
+    display: none;
+}
+.hero-img .hero-btn-2 {
+    display: none;
+}
+
 /* RESPONSIVE BREAKPOINTS */
+/* TABLET BESAR */
+@media screen and (max-width: 992px) {
+    nav {
+        padding: 15px 50px;
+    }
+    /* Hero */
+    .hero {
+        padding: 0 50px;
+    }
+    .hero-text h1 {
+        font-size: 38px;
+    }
+    .hero-text p {
+        font-size: 16px;
+    }
+    .hero-btn {
+        font-size: 14px;
+    }
+    .hero-img {
+        margin-right: 0;
+        text-align: center;
+    }
+    .hero-img img {
+        max-width: 250px
+    }
+}
 /* TABLET */
 @media screen and (max-width: 768px) {
     nav {
@@ -123,6 +219,39 @@ nav .sidebar-toggle ul li .active-link::after {
     }
     .nav-scrolled .sidebar-toggle ul li a {
         font-size: 13px;
+    }
+
+    /* Hero Tablet */
+    .hero {
+        padding: 0 30px;
+    }
+    .hero-text {
+        width: 50%;
+    }
+    .hero-text h1 {
+        font-size: 35px;
+        margin-bottom: 15px;
+    }
+    .hero-text p {
+        font-size: 15px;
+        margin-bottom: 25px;
+    }
+    .hero-btn {
+        font-size: 13px;
+    }
+    .hero-btn:hover {
+        box-shadow: inset 140px 0 0 #FF7A00;
+        cursor: pointer;
+        color: #fff;
+    }
+    .hero-img {
+        width: 220px;
+        margin-right: 50px;
+        text-align: center;
+    }
+    .hero-img img {
+        height: auto;
+        max-width: 100%;
     }
 }
 
@@ -233,5 +362,71 @@ nav .sidebar-toggle ul li .active-link::after {
     }
     nav .sidebar-toggle input:checked ~ ul {
         transform: scale(1);
+    }
+    /* Hero M */
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0 40px;
+    }
+    .hero-text {
+        width: 100%;
+        text-align: center;
+    }
+    .hero-text h1 {
+        font-size: 34px;
+        margin-bottom: 20px;
+    }
+    .hero-text p {
+        font-size: 14px;
+        margin-bottom: 25px;
+    }
+    .hero-text .hero-btn {
+        display: none;
+        font-size: 13px;
+        width: 120px;
+        height: 35px;
+    }
+    .hero-btn:hover {
+        box-shadow: inset 140px 0 0 #FF7A00;
+        cursor: pointer;
+        color: #fff;
+    }
+    .hero-img {
+        width: 200px;
+        margin-right: 0;
+        text-align: center;
+    }
+    .hero-img img {
+        height: auto;
+        max-width: 100%;
+    }
+    .hero-img .hero-btn {
+        display: inline-block;
+        font-size: 14px;
+        width: 130px;
+        height: 40x;
+        margin-top: 25px;
+        margin-bottom: 10px;
+    }
+    .hero-img .hero-btn-2 {
+        display: inline-block;
+        border: 2px solid #FF7A00;
+        background: none;
+        outline: none;
+        font-size: 13px;
+        height: 35px;
+        width: 100px;
+        border-radius: 30px;
+        color: var(--primary);
+        box-shadow: inset 0 0 0 0 #FF7A00;
+        transition: all .3s;
+    }
+    .hero-img .hero-btn-2:hover {
+        box-shadow: inset 140px 0 0 #FF7A00;
+        cursor: pointer;
+        color: #fff;
     }
 }
